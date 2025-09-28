@@ -1,3 +1,7 @@
 abstract class TailedBeastsEvent {}
 
-class TailedBeastsRequested extends TailedBeastsEvent {}
+class LoadFromHiveRequested extends TailedBeastsEvent {}
+
+class LoadOnlineRequested extends TailedBeastsEvent {}
+
+class ClearHiveRequested extends TailedBeastsEvent {}

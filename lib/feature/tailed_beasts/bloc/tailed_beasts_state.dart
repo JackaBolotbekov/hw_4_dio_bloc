@@ -1,6 +1,6 @@
 import '../model/tailed_beast.dart';
 
-enum TailedBeastsStatus { initial, loading, success, failure }
+enum TailedBeastsStatus { initial, loading, success, empty, failure }
 
 class TailedBeastsState {
   final TailedBeastsStatus status;

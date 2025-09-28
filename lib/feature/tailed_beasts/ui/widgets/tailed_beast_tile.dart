@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+
 import '../../model/tailed_beast.dart';
 
 class TailedBeastTile extends StatelessWidget {
@@ -12,12 +14,15 @@ class TailedBeastTile extends StatelessWidget {
 
     return ListTile(
       leading: imageUrl != null
-          ? Image.network(
-        imageUrl,
-        width: 56,
-        height: 56,
-        fit: BoxFit.cover,
-      )
+          ? ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
+                width: 56,
+                height: 56,
+                fit: BoxFit.cover,
+              ),
+            )
           : const SizedBox(width: 56, height: 56),
       title: Text(item.name),
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

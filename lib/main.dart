@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 import 'core/styles/app_colors.dart';
+import 'feature/tailed_beasts/model/tailed_beast.dart';
 import 'feature/tailed_beasts/ui/tailed_beasts_page.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(TailedBeastAdapter());
+  await Hive.openBox<TailedBeast>('tailed_beasts_box');
+
   runApp(const App());
 }
 

@@ -1,9 +1,8 @@
-import 'package:dio/dio.dart';
 import '../api/api_service.dart';
 import '../../feature/tailed_beasts/model/tailed_beast.dart';
 
 class ApiRepository {
-  ApiRepository({Dio? dio}) : _api = ApiService(dio ?? Dio());
+  ApiRepository(this._api);
 
   final ApiService _api;
 
